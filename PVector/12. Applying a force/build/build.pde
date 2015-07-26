@@ -13,6 +13,8 @@ class Mover {
   void update() {
     velocity.add(acceleration);
     location.add(velocity);
+    // Reset acceleration
+    acceleration.mult(0);
   }
 
   void applyForce(PVector f) {
@@ -55,10 +57,10 @@ void draw() {
 
   background(255);
 
-  PVector gravity = new PVector(0, 0.03);
+  PVector gravity = new PVector(0, 0.3);
   m.applyForce(gravity);
 
-  PVector wind = new PVector(0.05, 0);
+  PVector wind = new PVector(0.5, 0);
   m.applyForce(wind);
 
   m.update();

@@ -1,39 +1,36 @@
-// We can use the Monte Carlo method to make the general rule:
-// The higher the number, the more likely it is to be picked.
+import java.util.*;
 
+// Reminder: SD is calculated by:
+// 1. Taking the difference from the mean for each person. 
+// 2. Then squaring it (variance).
+// 3. Calculate the average of all these values.
+// 4. Take the square root as the SD.
 
-// How it works:
+Random generator; // var name generator
 
-//1. Pick a random number: R1
-//2. Compute probability P (called a "qualifying random value") that R1 should qualify. 
-//   Let's try P = R1.
-//3. Pick another random number: R2.
-//4. If R2 is less than P, then we have found our number–R1.
-//5. If R2 is not less than P, go back to step 1 and start over.
-
-float monteCarlo() {
+void setup() {
   
-    while (true) { // Do this until we find a qualifying random value
-     
-      float r1 = random(1); // Step 1
-      
-      float probability = r1; // Step 2
-      
-      float r2 = random(1); // Step 3
-      
-      if (r2 < probability) { // Step 4
-        
-        return r1; // There we go!
-        
-      }
-      
-    } // Step 5: It'll continue looping until the if statement is qualified.
-    
-  }
+  size(640,100);
+  
+  generator = new Random();
+  
+}
 
 void draw() {
   
-  println(monteCarlo());
+  float num = (float) generator.nextGaussian();
+  
+  float sd = 60;
+  
+  float mean = 320;
+  
+  float x = sd * num + mean;
+  
+  noStroke();
+  
+  fill(0,10);
+  
+  ellipse(x,50,16,16);
   
   
 }

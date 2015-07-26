@@ -60,11 +60,13 @@ void draw() {
   PVector gravity = new PVector(0, 0.3);
   m.applyForce(gravity);
 
-  PVector wind = new PVector(0.5, 0);
-  m.applyForce(wind);
+  if (mousePressed) {
+    PVector wind = new PVector(0.5, 0);
+    m.applyForce(wind);
 
-  PVector friction = new PVector(-0.04, -0.07);
-  m.applyForce(friction);
+    PVector friction = new PVector(-0.04, -0.07);
+    m.applyForce(friction);
+  }
 
   m.update();
   m.checkEdges();

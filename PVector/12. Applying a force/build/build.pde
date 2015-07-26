@@ -16,18 +16,17 @@ class Mover {
   }
 
   void applyForce(PVector f) {
-    acceleration = f;
+    // Accumulate forces
+    acceleration.add(f);
   }
 
   void display() {
     stroke(0);
     fill(175);
-    // The Mover is displayed
     ellipse(location.x, location.y, 16, 16);
   }
 
   void checkEdges() {
-
     if (location.x > width) {
       location.x = width;
       velocity.x *= -1;
@@ -35,12 +34,10 @@ class Mover {
       location.x = 0;
       velocity.x *= -1;
     }
-
     if (location.y > height) {
       location.y = height;
       velocity.y *= -1;
     }
-
   }
 
 }
@@ -50,18 +47,19 @@ class Mover {
 Mover m;
 
 void setup() {
-
   size(640, 360);
-
   m = new Mover();
-
 }
 
 void draw() {
 
   background(255);
-  PVector force = new PVector(0, 0.1);
-  m.applyForce(force);
+
+  PVector gravity = new PVector(0, 0.03);
+  m.applyForce(gravity);
+
+  PVector wind = new PVector(0.05, 0);
+  m.applyForce(wind);
 
   m.update();
   m.checkEdges();

@@ -63,8 +63,10 @@ void draw() {
   if (mousePressed) {
     PVector wind = new PVector(0.5, 0);
     m.applyForce(wind);
+  }
 
-    PVector friction = new PVector(-0.04, -0.07);
+  if(keyPressed) {
+    PVector friction = new PVector(-0.01, -0.03);
     m.applyForce(friction);
   }
 

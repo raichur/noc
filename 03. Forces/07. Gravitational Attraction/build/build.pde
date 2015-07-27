@@ -87,6 +87,9 @@ void setup() {
 void draw() {
   background(255);
 
+  PVector gravity = new PVector(0, 0.003);
+  m.applyForce(gravity);
+
   PVector force = a.attract(m);
   m.applyForce(force);
 
@@ -94,5 +97,3 @@ void draw() {
   a.display();
   m.display();
 }
-
-

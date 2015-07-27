@@ -67,12 +67,15 @@ class Mover {
 
     if (mousePressed) {
       // Friction!
-      PVector friction = m.velocity.get();
-      friction.normalize();
+      PVector drag = m.velocity.get();
+      drag.normalize();
   
-      float c = -0.1;
-      friction.mult(c);
-      m.applyForce(friction);
+      float c = -0.0001;
+      float speed = m.velocity.magSq();
+      
+      drag.mult(c*speed*speed);
+      
+      m.applyForce(drag);
     }
 
     m.update();

@@ -12,12 +12,10 @@ void draw() {
   a += aVeclocity;
   aVeclocity += aAcceleration;
 
-  pushMatrix();
   translate(width/2,height/2);
   rectMode(CENTER);
   stroke(0);
   fill(127);
   rotate(a);
   rect(0,0,64,36);
-  popMatrix();
 }

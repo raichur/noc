@@ -35,7 +35,7 @@ class Pendulum {
     if (!dragging) {
       float gravity = 0.4;
       aAcceleration = (-1 * gravity / r) * sin(angle);
-      aVelocity *= aAcceleration;
+      aVelocity += aAcceleration;
       aVelocity *= damping;
       angle += aVelocity;
     }

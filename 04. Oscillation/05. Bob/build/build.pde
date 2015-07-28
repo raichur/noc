@@ -2,6 +2,8 @@ PVector origin;
 PVector bob;
 float len;
 float angle = PI/4;
+float aAcc;
+float aVel;
 
 void setup() {
   size(640, 360);
@@ -19,6 +21,10 @@ void draw() {
 
   line(origin.x, origin.y, bob.x, bob.y);
   ellipse(bob.x, bob.y, 32, 32);
-  
-  angle += 0.01;
+
+  aAcc = -0.01 * sin(angle);
+
+  angle += aVel;
+  aVel += aAcc;
+  aVel *= 0.99;
 }

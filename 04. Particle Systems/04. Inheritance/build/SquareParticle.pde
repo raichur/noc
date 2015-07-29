@@ -5,9 +5,14 @@ class SquareParticle extends Particle {
   }
   
   void display() {
-    fill(127);
-    stroke(0);
+    
+    fill(127, lifespan);
+    stroke(0, lifespan);
     rectMode(CENTER);
-    rect(location.x, location.y, 16, 16);
+    pushMatrix();
+    translate(location.x, location.y);
+    rotate(a);
+    rect(0, 0, 16, 16);
+    popMatrix();
   }
 }

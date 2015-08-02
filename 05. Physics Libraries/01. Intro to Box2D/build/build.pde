@@ -1,18 +1,21 @@
-Particle particle;
+ArrayList<Box> boxes;
 
 void setup() {
   size(640, 360);
-  particle = new Particle(new PVector(width/2, 20));
+  boxes = new ArrayList<Box>();
 }
 
 void draw() {
   background(255);
-  particle.update();
-  particle.display();
   
-  // Demo: for particle removal
-  if(particle.isDead()){
-    background(255,0,0);
+  // Add new box if mouse clicked
+  if (mousePressed) {
+    Box p = new Box(mouseX, mouseY);
+    boxes.add(p);
   }
   
+  // Display all the boxes
+  for (Box b: boxes) {
+    b.display();
+  }
 }

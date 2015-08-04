@@ -7,7 +7,7 @@ class Particle {
   
   Particle (float x, float y) {
     makeBody(new Vec2(x, y));
-    col = color(127);
+    col = color(100);
   }
   
   void killBody() {

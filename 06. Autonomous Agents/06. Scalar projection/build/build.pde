@@ -7,7 +7,7 @@ void draw() {
   background(255);
   
   PVector a = new PVector(20, 300);
-  PVector b = new PVector(500, 250);
+  PVector b = new PVector(620, 250);
   PVector mouse = new PVector(mouseX, mouseY);
   
   stroke(0);

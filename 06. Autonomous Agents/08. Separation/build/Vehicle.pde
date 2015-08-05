@@ -11,11 +11,15 @@ class Vehicle {
   
   Vehicle (float x, float y) {
     location = new PVector(x, y);
-    r = 12.0;
-    maxSpeed = 3.0;
+    r = 12;
+    maxSpeed = 3;
     maxForce = 0.3;
     acceleration = new PVector(0, 0);
     velocity = new PVector(0, 0);
+  }
+  
+  void applyForce(PVector force) {
+    acceleration.add(force);
   }
   
   void separate (ArrayList<Vehicle> vehicles) {
@@ -54,10 +58,6 @@ class Vehicle {
     acceleration.mult(0);
   }
   
-  void applyForce(PVector force) {
-    acceleration.add(force);
-  }
-  
   void display() {
     fill(175);
     stroke(0);
@@ -68,9 +68,9 @@ class Vehicle {
   }
   
   void borders() {
-    if(location.x > -r) location.x = width + r;
-    if(location.y < -r) location.y = height + r;
-    if(location.x > width + r) location.x = -r;
-    if(location.y > height + r) location.y = -r;
+    if (location.x < -r) location.x = width + r;
+    if (location.y < -r) location.y = height + r;
+    if (location.x > width + r) location.x = -r;
+    if (location.y > height + r) location.y = -r;
   }
 }

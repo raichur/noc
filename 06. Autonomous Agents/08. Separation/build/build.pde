@@ -18,6 +18,8 @@ void draw() {
     v.borders();
     v.display();
   }
+  
+  fill(0);
 }  
 
 void mouseDragged() {

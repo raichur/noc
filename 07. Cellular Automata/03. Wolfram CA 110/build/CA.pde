@@ -2,7 +2,7 @@ class CA {
   int[] cells; // Array of cells
   int generation; // Number of generations
   int[] ruleset = {0, 1, 1, 1, 0, 1, 1, 0}; // (RULE 110) Simple ruleset, fascinating result!
-  int w = 10;
+  int w = 3;
   
   CA() {
     cells = new int[width/w];

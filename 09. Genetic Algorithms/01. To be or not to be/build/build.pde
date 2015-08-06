@@ -48,9 +48,9 @@ void displayInfo() {
   
   textSize(18);
   text("Total generations:    " + population.getGenerations(), 20, 160);
-  text("Average fitness:      " + nf(population.getAverageFitness(), 0, 2), 20, 180);
-  text("Total population:     " + populationMax, 20, 200);
-  text("Mutation rate:        " + int(mutationRate * 100) + '%', 20, 220);
+  text("Average fitness:        " + nf(population.getAverageFitness(), 0, 2), 20, 180);
+  text("Total population:      " + populationMax, 20, 200);
+  text("Mutation rate:           " + int(mutationRate * 100) + '%', 20, 220);
   
   textSize(10);
   text("All phrases:\n" + population.allPhrases(), 500, 10);

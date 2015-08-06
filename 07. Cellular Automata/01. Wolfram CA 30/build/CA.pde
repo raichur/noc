@@ -1,7 +1,7 @@
 class CA {
   int[] cells; // Array of cells
   int generation; // Number of generations
-  int[] ruleset = {0, 1, 0, 1, 1, 0, 1, 0}; // How simple is that?
+  int[] ruleset = {0, 1, 1, 1, 1, 0, 0, 0}; // (RULE 30) Simple ruleset, fascinating result!
   int w = 10;
   
   CA() {

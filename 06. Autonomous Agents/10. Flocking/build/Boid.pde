@@ -34,9 +34,9 @@ class Boid {
     PVector coh = cohesion(boids);
     
     // Set weights of these forces
-    sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep.mult(3);
+    ali.mult(1.7);
+    coh.mult(4.0);
     
     // Apply them forces
     applyForce(sep);
